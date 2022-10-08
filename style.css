@@ -3,3 +3,58 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(23, 24, 27);
+}
+
+.loader {
+  position: relative;
+  width: 280px;
+  height: 15px;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    purple,
+    red
+  );
+  border-radius: 5px;
+  background-size: 600%;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    purple,
+    red
+  );
+  border-radius: 5px;
+  background-size: 600%;
+  filter: blur(20px);
+  animation: loader 10s linear infinite;
+}
+
+@keyframes loader {
+  0% {
+    background-position: 0;
+  }
+  100% {
+    background-position: 600%;
+  }
+}
